@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Table Data</title>
+  <!-- CSS-->
+  <link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/resources/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <link href="/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="/resources/css/sb-admin.css" rel="stylesheet">
+  <!-- JS Files-->
+  <script src="/resources/jquery/jquery.min.js"></script>
+  <script src="/resources/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/resources/bootstrap/js/bootstrap.bundle.min.js.map"></script>
+  <script src="/resources/jquery-easing/jquery.easing.min.js"></script>
+  <script src="/resources/datatables/jquery.dataTables.js"></script>
+  <script src="/resources/datatables/dataTables.bootstrap4.js"></script>
+  <script src="/resources/js/sb-admin.min.js"></script>
+  <script src="/resources/js/sb-admin-datatables.min.js"></script>
+  <!--script for all table related operations-->
+  <script src="/js/tables.js"></script>
+  <script src="/js/permits.js"></script>
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <!-- Nav bar-->
+  <div id="includeNavBar"></div>
+  <!-- end of nav bar -->
+  <!-- start of table data -->
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i>Permit Data
+          <a href="#" id="exportLink" class="btn btn-primary" style="float:right;" onClick="javascript:fnExcelReport();">Export to Excel</a>
+          <button class="btn btn-primary"  onclick="visualizePage()" style="float:right;margin-right: 10px;">+Visualize</button>
+        </div>
+        <div class="card-body">
+          <div id="dvData" class="table-responsive">
+            <table id="dataTable" class="table table-bordered" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                    <th>Application/Permit Number</th>
+                    <th>Permit Type</th>
+                    <th>Address</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Action Type</th>
+                    <th>Work Type</th>
+                    <th>Value</th>
+                    <th>Applicant Name</th>
+                    <th>Application Date</th>
+                    <th>Issue Date</th>
+                    <th>Final Date</th>
+                    <th>Expiration Date</th>
+                    <th>Status</th>
+                    <th>Contractor</th>
+                    <th>Permit and Complaint Status</th>
+                    <th>Master Use Permit</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th>Location</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="5" align="center">... Fetching data ...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- table responsive ends -->
+        </div>
+        <!-- card body ends -->
+      </div>
+      <!-- card ends -->
+    </div>
+    <!-- /.container-fluid-->
+  </div>
+  <!-- /.content-wrapper ends-->
+
+  <script> 
+    $(function () {
+      $("#includeNavBar").load("dashboard_page.html");
+    });
+  </script>
+</body>
+
+</html>

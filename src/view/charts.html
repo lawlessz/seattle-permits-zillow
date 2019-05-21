@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Placeholder for all types of charts</title>
+  <!--CSS-->
+  <link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="/resources/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <link href="/resources/css/sb-admin.css" rel="stylesheet">
+  <!--JS-->
+  <script src="/resources/jquery/jquery.min.js"></script>
+  <script src="/resources/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/resources/jquery-easing/jquery.easing.min.js"></script>
+  <script src="/resources/datatables/jquery.dataTables.js"></script>
+  <script src="/resources/datatables/dataTables.bootstrap4.js"></script>
+  <script src="/resources/js/sb-admin.min.js"></script>
+  <script src="/resources/js/sb-admin-datatables.min.js"></script>
+  <script src="/resources/data-visualization/plotly-latest.min.js"></script>
+  <script src="/resources/data-visualization/numeric.min.js"></script>
+  <script src="/js/chartsModule.js"></script>
+  <script> 
+    $(function () {
+      $("#includeNavBar").load("dashboard_page.html");
+    });
+  </script>
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <!-- Nav bar-->
+  <div id="includeNavBar"></div>
+  <!-- end of nav bar -->
+  <div class="content-wrapper">
+    <div class="container">
+      <div class="col-md-3" style="float:left;">
+        <!--X-axis for horizontal bars and y for vertical bar graphs-->
+        <label style="font-weight: bold;">Select Column Name:</label>
+        <select id="graphX" name="graphoptions" size="10">
+          <!-- <option value="Application/Permit Number">Application/Permit Number</option> -->
+          <option value="Permit Type">Permit Type</option>
+          <!-- <option value="Address">Address</option> -->
+          <!-- <option value="Description">Description</option> -->
+          <option value="Category">Category</option>
+          <option value="Action Type">Action Type</option>
+          <option value="Work Type">Work Type</option>
+          <!-- <option value="Value">Value</option> -->
+          <!-- <option value="Applicant Name">Applicant Name</option> -->
+          <!-- <option value="Application Date">Application Date</option> -->
+          <!-- <option value="Issue Date">Issue Date</option> -->
+          <!-- <option value="Final Date">Final Date</option> -->
+          <!-- <option value="Expiration Date">Expiration Date</option> -->
+          <option value="Status">Status</option>
+          <option value="Contractor">Contractor</option>
+          <option value="zillow1">Zillow - Estimate</option>
+          <option value="zillow2">Zillow - Last sold price</option>
+          <!-- <option value="Permit and Complaint Status">Permit and Complaint Status</option> -->
+          <!-- <option value="Master Use Permit">Master Use Permit</option> -->
+          <!-- <option value="Latitude">Latitude</option> -->
+          <!-- <option value="Longitude">Longitude</option> -->
+          <!-- <option value="Location">Location</option> -->
+        </select>
+        <!--This are numeric values to be displayed. Values should match the db table column name-->
+        <div>
+          <label style="font-weight: bold;">Measure</label>
+        </div>
+        <div>
+          <select id="graphY" class="col-md-5" style="display:inline;">
+            <option value="none">Select One</option>
+            <option value="value">Value</option>
+            <option value="count">Count of Rows</option>
+          </select>
+          <select id="valueType" class="col-md-5" style="display:inline;">
+            <option value="none">Select One</option>
+            <option value="max">Max</option>
+            <option value="max">Min</option>
+            <option value="avg">Avg</option>
+          </select>
+        </div>
+         <br/>
+        <button class="btn btn-primary" onclick="setOptionsforGraphs()" type="button">Set Options</button>
+      </div>
+      <div class="col-md-9" style="float:right;display:inline;">
+        <button id="barGraphButton" class="fa fa-bar-chart" type="button" onclick="drawBarGraph()"></button>
+        <button id="barGraphButton" class="fa fa-align-left" type="button" onclick="drawHorizontalBarGraph()"></button>
+        <button id="pieChartButton" class="fa fa-pie-chart" type="button" onclick="drawPieChart()"></button>
+        <button id="lineChartButton" class="fa fa-line-chart" type="button" onclick="drawLineChart()"></button>
+        <button id="scatterPlotButton" type="button" onclick="drawScatterPlot()"><img style="width:16px;" src="/resources/scatter.png"></button>
+        <!-- Div for plotting the graphs-->
+        <div id="myDiv" style="display:inline;">
+          <div id="errorDiv"></div>
+        </div>
+      </div> <!--graph plot div ends-->
+    </div>
+    <!--container div ends-->
+  </div>
+  <!-- content wrapper ends -->
+
+  </div>
+</body>
+
+</html>
